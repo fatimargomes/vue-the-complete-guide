@@ -47,9 +47,7 @@ export default {
 
   methods: {
     toogleFavoriteStatus(friendId) {
-      console.log('ldkld => ', friendId)
       const identFriend = this.friends.find((friend) => friend.id === friendId)
-      console.log('ldkld2 => ', identFriend)
       identFriend.isFavorite = !identFriend.isFavorite
     },
     addContact(name, phone, email) {
