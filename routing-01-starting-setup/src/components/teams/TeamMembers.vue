@@ -50,6 +50,12 @@ export default {
     this.loadTeamMembers(this.$route);
   },
 
+  // can substitute watch function -> less flexible 
+  beforeRouteUpdate(to, _from, next) {
+    this.loadTeamMembers(to.params.teamId)
+    next();
+  },
+
   watch: {
     $route(newRoute) {
       this.loadTeamMembers(newRoute);
