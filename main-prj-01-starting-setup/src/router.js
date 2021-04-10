@@ -12,14 +12,13 @@ const router = createRouter({
     routes: [
         { path: '/', redirect: '/coaches' },
         {
-            name: 'coaches',
             path: '/coaches',
             component: CoachesList
         },
         {
-            // name: 'coaches',
             path: '/coaches/:id',
             component: CoachDetail,
+            props: true,
             children: [
                 { path: 'contact', component: ContactCoach }
             ]
